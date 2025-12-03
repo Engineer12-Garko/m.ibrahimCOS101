@@ -19,24 +19,24 @@ fn main() {
    let c :f32 = c.trim().parse().expect("invalid input");
    //finding discrinminat of tge equation 
 
-   let disc: f32 = b * b - (4.0 * a * c); 
+   let disc: f32 = b.powf(2.0) - (4.0 * a * c); 
    if disc > 0.0 {
     println!("The roots are real and not equal"); 
-             let root1 = - b + disc * 0.5; 
-             let root2 = - b - disc * 0.5; 
-             println!("the roots are {} and {}", root1, root2)
+             let root1 = (- b + disc.powf(0.5)) / (2.0 * a); 
+             let root2 = (- b - disc.powf(0.5)) / (2.0 * a); 
+             println!("the roots are {:.4} and {:.4}", root1, root2)
    }
     else if disc == 0.0 {
       println!("The roots are real and equal");
-              let root11 = - b + disc * 0.5; 
-             let root22 = - b - disc * 0.5; 
-             println!("the roots are {} and {}", root11, root22)
+              let root11 = (- b + disc.powf(0.5)) / (2.0 * a); 
+             let root22 = (- b - disc.powf(0.5)) / (2.0 * a); 
+             println!("the roots are {:.4} and {:.4}", root11, root22)
    }
     else if disc < 0.0 {
     println!("The root are complex"); 
-            let root111 = - b + disc * 0.5; 
-             let root222 = - b - disc * 0.5; 
-             println!("the roots are {} and {}", root111, root222)
+            let root111 = (- b + disc.powf(0.5)) / (2.0 * a); 
+             let root222 = (- b - disc.powf(0.5)) / (2.0 * a); 
+             println!("the roots are {:.4} and {:.4}", root111, root222)
    } 
    else {
     println!("out of scope!")
